@@ -1,0 +1,45 @@
+{
+  "name": "@martines3000/package-3",
+  "private": false,
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "source": "./src/index.ts",
+  "files": [
+    "dist/**",
+    "README.md",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martines3000/nx-monorepo-changesets.git"
+  },
+  "scripts": {
+    "build": "pnpm clean && pnpm compile",
+    "clean": "rimraf dist",
+    "compile": "tsup",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint:eslint": "eslint .",
+    "lint:fix": "eslint . --fix && prettier . --write",
+    "lint:prettier": "prettier . --check"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@martines3000/lib-3": "*"
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "tsup": "^7.1.0",
+    "typescript": "5.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

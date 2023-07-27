@@ -1,0 +1,32 @@
+module.exports = {
+  root: true,
+  extends: [
+    'airbnb-base',
+    'airbnb-typescript/base',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'prettier',
+  ],
+  plugins: ['@typescript-eslint/eslint-plugin'],
+  parser: '@typescript-eslint/parser',
+  rules: {
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/unbound-method': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+  },
+  ignorePatterns: [
+    '**/node_modules/**',
+    '**/dist/**',
+    '**/!.eslintrc.cjs',
+    '**/coverage/**',
+    '**/build/**',
+    '**/.docusaurus/**',
+    '**/next.config.js',
+    '**/out',
+    '**/.next',
+    'tsup.config.ts',
+  ],
+};
