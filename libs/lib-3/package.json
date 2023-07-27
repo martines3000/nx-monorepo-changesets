@@ -2,7 +2,7 @@
   "name": "@martines3000/lib-3",
   "private": false,
   "version": "0.0.0",
-  "description": "",
+  "description": "Simple library 3.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
