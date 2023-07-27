@@ -57,12 +57,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # Tag the releases if they were published
-      - name: Tag release
-        if: steps.changesets.outputs.published == 'true'
-        run: |
-          pnpm changeset tag
-          git push --follow-tags
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
