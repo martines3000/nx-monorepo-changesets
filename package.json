@@ -17,7 +17,9 @@
     "build": "pnpm nx run-many --target=build --all",
     "lint": "pnpm prettier && pnpm nx run-many --target=lint --all",
     "lint:fix": "pnpm prettier && pnpm nx run-many --target=lint:fix --all",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "release:publish": "pnpm install --frozen-lockfile && pnpm build && pnpm changeset publish",
+    "release:version": "pnpm changeset version && pnpm install && pnpm build"
   },
   "keywords": [],
   "author": "",

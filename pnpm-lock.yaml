@@ -120,10 +120,10 @@ importers:
   libs/lib-1:
     dependencies:
       '@martines3000/lib-2':
-        specifier: '*'
+        specifier: 0.0.1-beta.0
         version: link:../lib-2
       '@martines3000/lib-3':
-        specifier: '*'
+        specifier: 0.0.1-beta.0
         version: link:../lib-3
     devDependencies:
       eslint:
@@ -145,7 +145,7 @@ importers:
   libs/lib-2:
     dependencies:
       '@martines3000/lib-3':
-        specifier: '*'
+        specifier: 0.0.1-beta.0
         version: link:../lib-3
     devDependencies:
       eslint:
@@ -185,10 +185,10 @@ importers:
   packages/package-1:
     dependencies:
       '@martines3000/lib-1':
-        specifier: '*'
+        specifier: 0.0.1-beta.0
         version: link:../../libs/lib-1
       '@martines3000/package-2':
-        specifier: '*'
+        specifier: 0.1.0-beta.0
         version: link:../package-2
     devDependencies:
       eslint:
@@ -210,10 +210,10 @@ importers:
   packages/package-2:
     dependencies:
       '@martines3000/lib-2':
-        specifier: '*'
+        specifier: 0.0.1-beta.0
         version: link:../../libs/lib-2
       '@martines3000/package-3':
-        specifier: '*'
+        specifier: 0.1.0-beta.0
         version: link:../package-3
     devDependencies:
       eslint:
@@ -235,7 +235,7 @@ importers:
   packages/package-3:
     dependencies:
       '@martines3000/lib-3':
-        specifier: '*'
+        specifier: 0.0.1-beta.0
         version: link:../../libs/lib-3
     devDependencies:
       eslint:

@@ -1,0 +1,69 @@
+name: Release Beta
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+
+# Wait for the workflow to finish before starting a new one
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release-beta:
+    runs-on: ubuntu-latest
+    # More info: https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#adding-permissions-settings
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.10
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.0
+          registry-url: https://registry.npmjs.org/
+          cache: 'pnpm'
+
+      - name: Set deployment token
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Makes a pr to publish the changesets (when merged will publish to npm)
+      # see https://github.com/changesets/action
+      - name: Publish To NPM or Create Release Pull Request
+        uses: changesets/action@v1
+        id: changesets
+        with:
+          publish: pnpm release:publish
+          version: pnpm release:version
+          commit: 'chore: version packages'
+          title: 'chore: version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Tag the releases if they were published
+      - name: Tag release
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          pnpm changeset tag
+          git push --follow-tags
+        with:
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
