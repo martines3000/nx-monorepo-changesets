@@ -1,5 +1,5 @@
-import { LIB_NAME as LIB_NAME_2 } from "@martines3000/lib-2";
-import { PACKAGE_NAME as PACKAGE_NAME_3 } from "@martines3000/package-3";
+import { LIB_NAME as LIB_NAME_2 } from '@martines3000/lib-2';
+import { PACKAGE_NAME as PACKAGE_NAME_3 } from '@martines3000/package-3';
 
 // eslint-disable-next-line import/prefer-default-export
 export const PACKAGE_NAME = 'package-2';
