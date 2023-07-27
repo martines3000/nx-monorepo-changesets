@@ -11,5 +11,8 @@
     "@martines3000/package-2": "0.0.0",
     "@martines3000/package-3": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "angry-fans-ring",
+    "late-spiders-nail"
+  ]
 }
