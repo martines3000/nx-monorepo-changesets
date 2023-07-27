@@ -19,7 +19,7 @@
     "lint:fix": "pnpm prettier && pnpm nx run-many --target=lint:fix --all",
     "prettier": "prettier --write .",
     "release:publish": "pnpm install --frozen-lockfile && pnpm build && pnpm changeset publish",
-    "release:version": "pnpm changeset version && pnpm install --lockfile-only && pnpm build && git config --global --add --bool push.autoSetupRemote true && git add . && git commit -m \"chore: update versions\" && git push"
+    "release:version": "pnpm changeset version && pnpm install --lockfile-only && pnpm build && git add . && git commit -m \"chore: update versions\""
   },
   "keywords": [],
   "author": "",
