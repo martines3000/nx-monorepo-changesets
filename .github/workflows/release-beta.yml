@@ -51,8 +51,10 @@ jobs:
         id: changesets
         with:
           publish: pnpm release:publish
-          version: pnpm release:version
-          commit: 'chore: version packages'
+          version: |
+            pnpm release:version
+            git add .
+            git commit -m "chore: version packages"
           title: 'chore: version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
