@@ -2,7 +2,7 @@
   "name": "@martines3000/package-1",
   "private": false,
   "version": "0.0.0",
-  "description": "",
+  "description": "Simple package with package name 1 for testing purposes.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
