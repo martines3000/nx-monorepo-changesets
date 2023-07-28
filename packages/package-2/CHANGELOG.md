@@ -1,5 +1,12 @@
 # @martines3000/package-2
 
+## 0.1.1-beta.2
+
+### Patch Changes
+
+- @martines3000/lib-2@0.1.0-beta.2
+- @martines3000/package-3@0.1.1-beta.2
+
 ## 0.1.1-beta.1
 
 ### Patch Changes
