@@ -1,17 +1,14 @@
-name: Release Beta
+name: Exit Prerelease Mode
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - develop
 
 # Wait for the workflow to finish before starting a new one
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release-beta:
-    # Only allow on develop branch
-    if: ${{ github.ref == 'refs/heads/develop' }}
+    # Only allow on master branch
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     # More info: https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#adding-permissions-settings
     permissions:
@@ -37,24 +34,15 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'pnpm'
 
-      - name: Set deployment token
-        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Makes a pr to publish the changesets (when merged will publish to npm)
-      # see https://github.com/changesets/action
-      - name: Publish To NPM or Create Release Pull Request
-        uses: changesets/action@v1
-        id: changesets
-        with:
-          publish: pnpm release:publish:beta
-          version: pnpm release:version:beta
-          title: 'chore: version packages (beta)'
-          commit: 'chore: version packages (beta)'
+      # Exit prerelease mode and commit the changes
+      - name: Exit Prerelease Mode
+        run: |
+          pnpm changeset pre exit
+          git add .
+          git commit -m "chore: exit prerelease mode"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

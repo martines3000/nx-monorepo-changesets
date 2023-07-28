@@ -50,8 +50,8 @@ jobs:
         with:
           publish: pnpm release:publish:stable
           version: pnpm release:version:stable
-          title: 'chore: version packages'
-          commit: 'chore: version packages'
+          title: 'chore: version packages (stable)'
+          commit: 'chore: version packages (stable)'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
