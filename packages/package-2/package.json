@@ -1,7 +1,7 @@
 {
   "name": "@martines3000/package-2",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -30,7 +30,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@martines3000/lib-2": "0.0.1",
+    "@martines3000/lib-2": "0.1.0",
     "@martines3000/package-3": "0.1.0"
   },
   "devDependencies": {
