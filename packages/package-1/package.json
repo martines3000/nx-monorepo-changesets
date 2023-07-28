@@ -1,7 +1,7 @@
 {
   "name": "@martines3000/package-1",
   "private": false,
-  "version": "0.1.1-beta.1",
+  "version": "0.1.1-beta.2",
   "description": "Simple package with package name 1 for testing purposes.",
   "type": "module",
   "main": "./dist/index.js",
@@ -30,8 +30,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@martines3000/lib-1": "0.0.2-beta.1",
-    "@martines3000/package-2": "0.1.1-beta.1"
+    "@martines3000/lib-1": "0.0.2-beta.2",
+    "@martines3000/package-2": "0.1.1-beta.2"
   },
   "devDependencies": {
     "eslint": "^8.45.0",
