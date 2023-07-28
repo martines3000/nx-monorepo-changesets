@@ -1,7 +1,7 @@
 {
   "name": "@martines3000/package-1",
   "private": false,
-  "version": "0.1.1-beta.2",
+  "version": "0.2.0-beta.3",
   "description": "Simple package with package name 1 for testing purposes.",
   "type": "module",
   "main": "./dist/index.js",

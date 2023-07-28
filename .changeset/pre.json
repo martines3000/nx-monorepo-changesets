@@ -12,6 +12,7 @@
     "@martines3000/package-3": "0.1.0"
   },
   "changesets": [
+    "neat-seas-grab",
     "slimy-teachers-applaud",
     "tall-ducks-sleep",
     "tame-yaks-pump",
