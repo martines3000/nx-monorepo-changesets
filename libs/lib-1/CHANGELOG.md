@@ -1,5 +1,12 @@
 # @martines3000/lib-1
 
+## 0.0.1-beta.2
+
+### Patch Changes
+
+- bc1f8f9: chore: update lib-1 and test changeset bot
+- bd7ada8: another change set test123
+
 ## 0.0.1-beta.1
 
 ### Patch Changes

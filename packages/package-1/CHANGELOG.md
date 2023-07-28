@@ -1,5 +1,13 @@
 # @martines3000/package-1
 
+## 0.1.0-beta.2
+
+### Patch Changes
+
+- Updated dependencies [bc1f8f9]
+- Updated dependencies [bd7ada8]
+  - @martines3000/lib-1@0.0.1-beta.2
+
 ## 0.1.0-beta.1
 
 ### Patch Changes
