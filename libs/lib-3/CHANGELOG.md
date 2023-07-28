@@ -1,5 +1,11 @@
 # @martines3000/lib-3
 
+## 0.0.2
+
+### Patch Changes
+
+- baac649: slpkdčfgm slpdfgmsldfšgm,
+
 ## 0.0.2-beta.0
 
 ### Patch Changes
