@@ -52,8 +52,8 @@ jobs:
         uses: changesets/action@v1
         id: changesets
         with:
-          publish: bash scripts/publish-beta.sh
           version: bash scripts/version-beta.sh
+          publish: bash scripts/publish-beta.sh
           title: 'chore: version packages (beta)'
           commit: 'chore: version packages (beta)'
         env:
