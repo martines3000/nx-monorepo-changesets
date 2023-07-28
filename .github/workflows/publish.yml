@@ -1,18 +1,6 @@
-name: Release Stable
+name: Publish Stable
 on:
   workflow_dispatch:
-    inputs:
-      selected-package:
-        description: 'Package to version and publish to npm.'
-        required: false
-        default: 'all'
-        type: choice
-        options:
-          - 'all'
-          - '@martines3000/core'
-          - '@martines3000/lib-1'
-          - '@martines3000/lib-2'
-          - '@martines3000/lib-3'
 
 # Wait for the workflow to finish before starting a new one
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -47,6 +35,11 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'pnpm'
 
+      - name: Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Set deployment token
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
@@ -55,16 +48,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Makes a pr to publish the changesets (when merged will publish to npm)
-      # see https://github.com/changesets/action
-      - name: Publish To NPM or Create Release Pull Request
-        uses: changesets/action@v1
-        id: changesets
-        with:
-          publish: bash scripts/publish-stable.sh
-          version: bash scripts/version-stable.sh ${{ github.event.inputs.selected-package }}
-          title: 'chore: version packages (stable)'
-          commit: 'chore: version packages (stable)'
+      - name: Publish To NPM
+        run: bash scripts/publish-stable.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
