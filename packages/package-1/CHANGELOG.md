@@ -1,5 +1,11 @@
 # @martines3000/package-1
 
+## 0.2.0-beta.3
+
+### Minor Changes
+
+- 805726d: asdasdasd
+
 ## 0.1.1-beta.2
 
 ### Patch Changes
