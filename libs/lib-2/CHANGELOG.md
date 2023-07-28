@@ -1,5 +1,18 @@
 # @martines3000/lib-2
 
+## 0.1.0
+
+### Minor Changes
+
+- 160ffd2: testing new release partial
+- 105d334: another minor
+
+### Patch Changes
+
+- 3223f1a: test again
+- Updated dependencies [baac649]
+  - @martines3000/lib-3@0.0.2
+
 ## 0.1.0-beta.2
 
 ### Patch Changes
