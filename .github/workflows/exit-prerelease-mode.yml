@@ -37,6 +37,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Git config
+        run: |
+          git config user.name ${{ secrets.CI_GITHUB_USER }}
+          git config user.email ${{ secrets.CI_GITHUB_EMAIL }}
+
       # Exit prerelease mode and commit the changes
       - name: Exit Prerelease Mode
         run: |
