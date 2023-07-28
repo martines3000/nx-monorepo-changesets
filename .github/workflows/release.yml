@@ -62,9 +62,7 @@ jobs:
         id: changesets
         with:
           publish: bash scripts/publish-stable.sh
-          version: |
-            export SELECTED_PACKAGE=${{ github.event.inputs.selected-package }}
-            bash scripts/version-stable.sh
+          version: bash scripts/version-stable.sh ${{ github.event.inputs.selected-package }}
           title: 'chore: version packages (stable)'
           commit: 'chore: version packages (stable)'
         env:
