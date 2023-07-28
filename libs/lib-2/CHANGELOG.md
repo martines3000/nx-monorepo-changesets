@@ -1,5 +1,11 @@
 # @martines3000/lib-2
 
+## 0.1.0-beta.1
+
+### Minor Changes
+
+- 105d334: another minor
+
 ## 0.1.0-beta.0
 
 ### Minor Changes
