@@ -18,10 +18,10 @@
     "lint": "pnpm prettier && pnpm nx run-many --target=lint --all",
     "lint:fix": "pnpm prettier && pnpm nx run-many --target=lint:fix --all",
     "prettier": "prettier --write .",
-    "release:publish:beta": "bash ./scripts/publish-beta.sh",
-    "release:version:beta": "bash ./scripts/version-beta.sh",
-    "release:publish:stable": "bash ./scripts/publish-stable.sh",
-    "release:version:stable": "bash ./scripts/version-stable.sh"
+    "release:publish:beta": "source ./scripts/publish-beta.sh",
+    "release:version:beta": "source ./scripts/version-beta.sh",
+    "release:publish:stable": "source ./scripts/publish-stable.sh",
+    "release:version:stable": "source ./scripts/version-stable.sh"
   },
   "keywords": [],
   "author": "",
@@ -39,9 +39,10 @@
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
     "eslint": "^8.45.0",
-    "eslint-config-prettier": "^8.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^8.9.0",
+    "execa": "^7.2.0",
     "nx": "16.5.5",
     "prettier": "^3.0.0"
   }

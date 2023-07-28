@@ -1,6 +1,18 @@
 name: Release Stable
 on:
   workflow_dispatch:
+    inputs:
+      selected-package:
+        description: 'Package to version and publish to npm.'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - 'all'
+          - '@martines3000/core'
+          - '@martines3000/lib-1'
+          - '@martines3000/lib-2'
+          - '@martines3000/lib-3'
 
 # Wait for the workflow to finish before starting a new one
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -55,3 +67,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          SELECTED_PACKAGE: ${{ github.event.inputs.selected-package }}
