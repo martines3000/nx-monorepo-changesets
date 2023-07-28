@@ -51,8 +51,8 @@ jobs:
         uses: changesets/action@v1
         id: changesets
         with:
-          publish: pnpm release:publish:beta
-          version: pnpm release:version:beta
+          publish: bash scripts/publish-beta.sh
+          version: bash scripts/version-beta.sh
           title: 'chore: version packages (beta)'
           commit: 'chore: version packages (beta)'
         env:

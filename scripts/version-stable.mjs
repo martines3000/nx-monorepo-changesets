@@ -35,7 +35,7 @@ function findAllDependencies(pkg, dependencies = new Set()) {
 
 const main = async () => {
   const args = process.argv;
-  console.log(args);
+
   if (args.length < 3) {
     console.error('No package was selected');
     process.exit(1);
