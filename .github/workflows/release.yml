@@ -60,11 +60,12 @@ jobs:
         uses: changesets/action@v1
         id: changesets
         with:
-          publish: pnpm release:publish:stable
-          version: pnpm release:version:stable
+          publish: bash scripts/publish-stable.sh
+          version: |
+            export SELECTED_PACKAGE=${{ github.event.inputs.selected-package }}
+            bash scripts/version-stable.sh
           title: 'chore: version packages (stable)'
           commit: 'chore: version packages (stable)'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          SELECTED_PACKAGE: ${{ github.event.inputs.selected-package }}
