@@ -11,5 +11,8 @@
     "@martines3000/package-2": "0.1.0",
     "@martines3000/package-3": "0.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "slimy-teachers-applaud",
+    "tame-yaks-pump"
+  ]
 }
