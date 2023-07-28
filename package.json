@@ -18,8 +18,10 @@
     "lint": "pnpm prettier && pnpm nx run-many --target=lint --all",
     "lint:fix": "pnpm prettier && pnpm nx run-many --target=lint:fix --all",
     "prettier": "prettier --write .",
-    "release:publish": "pnpm install --frozen-lockfile && pnpm build && pnpm changeset publish",
-    "release:version": "pnpm changeset version && pnpm install --lockfile-only && pnpm build && git add . && git commit -m \"chore: update versions\""
+    "release:publish:beta": "bash ./scripts/publish-beta.sh",
+    "release:version:beta": "bash ./scripts/version-beta.sh",
+    "release:publish:stable": "bash ./scripts/publish-stable.sh",
+    "release:version:stable": "bash ./scripts/version-stable.sh"
   },
   "keywords": [],
   "author": "",

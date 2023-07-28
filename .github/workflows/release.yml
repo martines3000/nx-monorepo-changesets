@@ -1,17 +1,14 @@
-name: Release Beta
+name: Release Stable
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - develop
 
 # Wait for the workflow to finish before starting a new one
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release-beta:
-    # Only allow on develop branch
-    if: ${{ github.ref == 'refs/heads/develop' }}
+  release-stable:
+    # Only allow on master branch
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     # More info: https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#adding-permissions-settings
     permissions:
@@ -51,8 +48,8 @@ jobs:
         uses: changesets/action@v1
         id: changesets
         with:
-          publish: pnpm release:publish:beta
-          version: pnpm release:version:beta
+          publish: pnpm release:publish:stable
+          version: pnpm release:version:stable
           title: 'chore: version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
