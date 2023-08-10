@@ -1,5 +1,16 @@
 # @martines3000/package-1
 
+## 0.2.0-beta.4
+
+### Minor Changes
+
+- 805726d: asdasdasd
+
+### Patch Changes
+
+- @martines3000/lib-1@0.0.2-beta.3
+- @martines3000/package-2@0.2.0-beta.4
+
 ## 0.2.0-beta.3
 
 ### Minor Changes
