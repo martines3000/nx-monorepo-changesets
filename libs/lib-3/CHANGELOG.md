@@ -1,5 +1,11 @@
 # @martines3000/lib-3
 
+## 0.1.0-beta.0
+
+### Minor Changes
+
+- dc38862: Test bump lib3 minor
+
 ## 0.0.2
 
 ### Patch Changes

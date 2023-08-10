@@ -1,5 +1,12 @@
 # @martines3000/package-3
 
+## 0.2.0-beta.4
+
+### Patch Changes
+
+- Updated dependencies [dc38862]
+  - @martines3000/lib-3@0.1.0-beta.0
+
 ## 0.1.1-beta.2
 
 ### Patch Changes

@@ -11,5 +11,8 @@
     "@martines3000/package-2": "0.1.1-beta.2",
     "@martines3000/package-3": "0.1.1-beta.2"
   },
-  "changesets": []
+  "changesets": [
+    "lovely-plums-boil",
+    "neat-seas-grab"
+  ]
 }
